@@ -2,6 +2,7 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'ty
 import { Auditorium } from './auditorium.entity';
 import { SeatType } from './seat-type.entity';
 import { ShowSeat } from './show-seat.entity';
+import { TicketSeat } from './ticket-seat.entity';
 
 @Entity()
 export class Seat {
@@ -22,4 +23,7 @@ export class Seat {
 
   @OneToMany(() => ShowSeat, (showSeat) => showSeat.seat)
   showSeats: ShowSeat[];
+
+  @OneToMany(() => TicketSeat, (ticketSeat) => ticketSeat.seat)
+  ticketSeats: TicketSeat[];
 }

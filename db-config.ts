@@ -9,6 +9,7 @@ import { ShowSeatType } from 'src/entities/show-seat-type.entity';
 import { ShowSeat } from 'src/entities/show-seat.entity';
 import { Show } from 'src/entities/show.entity';
 import { Theatre } from 'src/entities/theatre.entity';
+import { TicketSeat } from 'src/entities/ticket-seat.entity';
 import { Ticket } from 'src/entities/ticket.entity';
 import { User } from 'src/entities/user.entity';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
@@ -34,6 +35,7 @@ export const dbConfig: PostgresConnectionOptions = {
     Language,
     ShowSeatType,
     ShowSeat,
+    TicketSeat,
   ],
   synchronize: true,
 };
