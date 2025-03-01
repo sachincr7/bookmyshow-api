@@ -26,7 +26,7 @@ export class Show {
   @Column()
   endTime: Date;
 
-  @OneToOne(() => Movie, (movie) => movie.show)
+  @ManyToOne(() => Movie, (movie) => movie.shows)
   movie: Movie;
 
   @OneToMany(() => Ticket, (ticket) => ticket.show)

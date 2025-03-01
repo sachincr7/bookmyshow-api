@@ -9,9 +9,9 @@ export class Movie {
 
   @Column()
   name: string;
-  
-  @OneToOne(() => Show, (show) => show.movie)
-  show: Show;
+
+  @OneToMany(() => Show, (show) => show.movie)
+  shows: Show[];
 
   @OneToMany(() => Language, (language) => language.movie)
   languages: Language[];
