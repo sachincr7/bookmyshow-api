@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { BookTicketRequestDto } from './dtos/book-ticket-request.dto';
-import { BookTicketResponseDto } from './dtos/book-ticket-response.dto';
 import { TicketService } from './services/ticket.service';
+import { Ticket } from '@/entities/ticket.entity';
 
 @Controller()
 export class CreateTicketController {
@@ -10,7 +10,12 @@ export class CreateTicketController {
   @Post('book.json')
   async bookTicket(
     @Body() bookTicketDto: BookTicketRequestDto,
-  ): Promise<BookTicketResponseDto> {
-    // return 'Hello World';
+  ): Promise<Ticket> {
+    const ticket = await this.ticketService.bookTicket(
+      bookTicketDto.seatIds,
+      bookTicketDto.showId,
+      bookTicketDto.userId,
+    );
+    return ticket;
   }
 }

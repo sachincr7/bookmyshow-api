@@ -19,4 +19,7 @@ export class ShowSeat {
 
   @ManyToOne(() => Seat, (seat) => seat.showSeats)
   seat: Seat;
+
+  @Column()
+  lockedAt: Date;
 }
